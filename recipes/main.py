@@ -41,7 +41,12 @@ def delete(recipe_id):
     """Delete a recipe."""
     # Add logic to delete a specific recipe based on the recipe_id
     pass
-
+@cli.command()
+@click.argument('ingredient')
+def search_by_ingredient(ingredient):
+    """Search recipes by ingredient."""
+    # Add logic to query and display recipes containing the specified ingredient
+    pass
             
 
 if __name__ == '__main__':
