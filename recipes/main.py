@@ -15,3 +15,4 @@ def add(name, ingredients, instructions):
     new_recipe = Recipe(name=name, ingredients=ingredients, instructions=instructions)
     session.add(new_recipe)
     session.commit()
+    click.echo(f"Recipe '{name}' added successfully!")
