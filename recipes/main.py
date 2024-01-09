@@ -14,3 +14,4 @@ def add(name, ingredients, instructions):
     """Add a new recipe."""
     new_recipe = Recipe(name=name, ingredients=ingredients, instructions=instructions)
     session.add(new_recipe)
+    session.commit()
