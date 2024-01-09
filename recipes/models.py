@@ -8,3 +8,11 @@ engine = create_engine('sqlite:///recipes.db', echo=False)
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
+
+# Recipe model
+class Recipe(Base):
+    __tablename__ = 'recipes'
+    id = Column(Integer, primary_key=True)
+    name = Column(String, nullable=False)
+    ingredients = Column(Text, nullable=False)
+    instructions = Column(String, nullable=False)
