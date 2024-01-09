@@ -16,3 +16,7 @@ class Recipe(Base):
     name = Column(String, nullable=False)
     ingredients = Column(Text, nullable=False)
     instructions = Column(String, nullable=False)
+
+    # Define a string representation for better display
+    def __repr__(self):
+        return f"<Recipe(id={self.id}, name={self.name})>"
