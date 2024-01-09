@@ -25,3 +25,7 @@ def view():
      # Check if there are no recipes
     if not recipes:
         click.echo("No recipes available.")
+    else:
+        # Display each recipe's ID and name
+        for recipe in recipes:
+            click.echo(f"{recipe.id}. {recipe.name}")
