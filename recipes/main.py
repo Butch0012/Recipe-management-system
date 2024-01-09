@@ -16,9 +16,12 @@ def add(name, ingredients, instructions):
     session.add(new_recipe)
     session.commit()
     click.echo(f"Recipe '{name}' added successfully!")
-    
+
 @cli.command()
 def view():
     """View all recipes."""
     # Query all recipes from the database
     recipes = session.query(Recipe).all()
+     # Check if there are no recipes
+    if not recipes:
+        click.echo("No recipes available.")
