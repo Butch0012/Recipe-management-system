@@ -35,7 +35,12 @@ def update(recipe_id):
     """Update a recipe."""
     # Add logic to update a specific recipe based on the recipe_id
     pass
-
+@cli.command()
+@click.argument('recipe_id', type=int)
+def delete(recipe_id):
+    """Delete a recipe."""
+    # Add logic to delete a specific recipe based on the recipe_id
+    pass
 
             
 
