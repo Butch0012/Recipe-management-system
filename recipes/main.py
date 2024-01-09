@@ -29,5 +29,15 @@ def view():
         # Display each recipe's ID and name
         for recipe in recipes:
             click.echo(f"{recipe.id}. {recipe.name}")
+@cli.command()
+@click.argument('recipe_id', type=int)
+def update(recipe_id):
+    """Update a recipe."""
+    # Add logic to update a specific recipe based on the recipe_id
+    pass
+
+
+            
+
 if __name__ == '__main__':
  cli()
