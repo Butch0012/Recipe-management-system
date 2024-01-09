@@ -29,3 +29,5 @@ def view():
         # Display each recipe's ID and name
         for recipe in recipes:
             click.echo(f"{recipe.id}. {recipe.name}")
+if __name__ == '__main__':
+ cli()
