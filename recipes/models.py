@@ -5,7 +5,10 @@ from sqlalchemy.orm import sessionmaker
 # SQLAlchemy setup
 Base = declarative_base()
 engine = create_engine('sqlite:///recipes.db', echo=False)
+
 Base.metadata.create_all(engine)
+print("Tables created successfully")
+
 Session = sessionmaker(bind=engine)
 session = Session()
 
