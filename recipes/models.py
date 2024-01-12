@@ -1,13 +1,16 @@
 from sqlalchemy import create_engine, Column, Integer, String, Text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.pool import NullPool
 
 # SQLAlchemy setup
 Base = declarative_base()
-engine = create_engine('sqlite:///recipes.db', echo=False)
+engine = create_engine('sqlite:///recipes.db', poolclass=NullPool, connect_args={'check_same_thread': False})
+
 
 Base.metadata.create_all(engine)
 print("Tables created successfully")
+
 
 Session = sessionmaker(bind=engine)
 session = Session()
